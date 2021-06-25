@@ -1,0 +1,10 @@
+- name: Playbook para criação de usuario no mysql
+  hosts: all
+  tasks:
+    - name: Cria usuario MySQL
+      mysql_user:
+        login_user: root
+        name: wordpress_user
+        password: 12345
+        priv: 'wordpress_db.*:ALL'
+        state: present
